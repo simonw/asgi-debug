@@ -8,6 +8,7 @@ def asgi_debug_decorator(log_to=print):
         async def app_wrapped_with_debug(scope, recieve, send):
             log_to(pformat(scope))
             log_to("\n")
+
             async def wrapped_send(event):
                 log_to(pformat(event))
                 log_to("\n")

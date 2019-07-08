@@ -34,6 +34,9 @@ async def test_asgi_debug():
     }
     assert [
         "{'http_version': '1.0', 'method': 'GET', 'path': '/', 'type': 'http'}",
+        "\n",
         "{'headers': [[b'content-type', b'application/json']],\n 'status': 200,\n 'type': 'http.response.start'}",
+        "\n",
         "{'body': b'{\"hello\": \"world\"}', 'type': 'http.response.body'}",
+        "\n",
     ] == captured
